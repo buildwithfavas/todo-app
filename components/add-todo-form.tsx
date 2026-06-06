@@ -31,7 +31,7 @@ export default function AddTodoForm() {
         onKeyDown={handleKeyPress}
         type="text"
         placeholder="Create a new task..."
-        className="flex-1 border-zinc-800 bg-zinc-950/40 text-white placeholder:text-zinc-500 focus:ring-indigo-500"
+        className="flex-1 border-zinc-200 bg-white text-zinc-900 placeholder:text-zinc-400 focus:ring-indigo-500"
         disabled={isLoading}
       />
       <Button

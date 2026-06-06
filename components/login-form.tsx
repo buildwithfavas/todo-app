@@ -46,24 +46,24 @@ export default function LoginForm() {
   };
 
   return (
-    <Card className="w-full max-w-md border border-zinc-800 bg-zinc-900/60 text-white shadow-2xl backdrop-blur-md">
+    <Card className="w-full max-w-md border border-zinc-200/80 bg-white/90 text-zinc-900 shadow-xl backdrop-blur-md">
       <CardHeader className="space-y-1 text-center">
-        <CardTitle className="text-3xl font-extrabold tracking-tight bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+        <CardTitle className="text-3xl font-extrabold tracking-tight bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
           Welcome Back
         </CardTitle>
-        <CardDescription className="text-zinc-400">
+        <CardDescription className="text-zinc-500">
           Enter your email and password to sign in to your dashboard
         </CardDescription>
       </CardHeader>
       <form onSubmit={handleLogin}>
         <CardContent className="space-y-4">
           {error && (
-            <div className="rounded-lg border border-red-500/30 bg-red-500/10 p-3 text-sm text-red-400">
+            <div className="rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-600">
               ⚠️ {error}
             </div>
           )}
           <div className="space-y-2">
-            <label className="text-sm font-medium text-zinc-300" htmlFor="email">
+            <label className="text-sm font-medium text-zinc-700" htmlFor="email">
               Email Address
             </label>
             <Input
@@ -72,12 +72,12 @@ export default function LoginForm() {
               placeholder="name@example.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="border-zinc-800 bg-zinc-950/50 text-white placeholder:text-zinc-500 focus:ring-indigo-500"
+              className="border-zinc-200 bg-white text-zinc-900 placeholder:text-zinc-400 focus:ring-indigo-500"
               required
             />
           </div>
           <div className="space-y-2">
-            <label className="text-sm font-medium text-zinc-300" htmlFor="password">
+            <label className="text-sm font-medium text-zinc-700" htmlFor="password">
               Password
             </label>
             <Input
@@ -86,7 +86,7 @@ export default function LoginForm() {
               placeholder="••••••••"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="border-zinc-800 bg-zinc-950/50 text-white placeholder:text-zinc-500 focus:ring-indigo-500"
+              className="border-zinc-200 bg-white text-zinc-900 placeholder:text-zinc-400 focus:ring-indigo-500"
               required
             />
           </div>
@@ -95,9 +95,9 @@ export default function LoginForm() {
           <Button type="submit" variant="gradient" className="w-full h-11" isLoading={isLoading}>
             Sign In
           </Button>
-          <div className="text-center text-sm text-zinc-400">
+          <div className="text-center text-sm text-zinc-500">
             {"Don't have an account?"}{" "}
-            <Link href="/signup" className="text-indigo-400 hover:text-indigo-300 transition-colors font-medium">
+            <Link href="/signup" className="text-indigo-600 hover:text-indigo-700 transition-colors font-medium">
               Sign up
             </Link>
           </div>

@@ -13,7 +13,7 @@ export default async function SignupPage() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gradient-to-tr from-zinc-950 via-indigo-950 to-zinc-950 px-4 py-12">
+    <div className="flex min-h-screen items-center justify-center bg-gradient-to-tr from-indigo-50 via-purple-50 to-slate-100 px-4 py-12">
       <SignupForm />
     </div>
   );

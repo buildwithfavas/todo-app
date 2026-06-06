@@ -13,7 +13,7 @@ export default async function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-zinc-950 via-zinc-900 to-zinc-950 text-white py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-b from-zinc-50 via-slate-100 to-zinc-50 text-zinc-900 py-12 px-4 sm:px-6 lg:px-8">
       <DashboardContainer user={session.user} />
     </div>
   );
