@@ -90,14 +90,15 @@ export default function TodoItem({ todo }: { todo: Todo }) {
           </>
         ) : (
           <>
-            <button
-              onClick={() => setIsEditing(true)}
-              className="p-1.5 text-indigo-600 hover:bg-indigo-50 rounded-lg transition-colors"
-              title="Edit"
-              disabled={todo.completed}
-            >
-              <Edit2 className="w-4 h-4" />
-            </button>
+            {!todo.completed && (
+              <button
+                onClick={() => setIsEditing(true)}
+                className="p-1.5 text-indigo-600 hover:bg-indigo-50 rounded-lg transition-colors"
+                title="Edit"
+              >
+                <Edit2 className="w-4 h-4" />
+              </button>
+            )}
             <button
               onClick={() => deleteTodo(todo.id)}
               className="p-1.5 text-rose-600 hover:bg-rose-50 rounded-lg transition-colors"
