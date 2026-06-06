@@ -70,7 +70,7 @@ export default function TodoItem({ todo }: { todo: Todo }) {
       </div>
 
       {/* Action Buttons */}
-      <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition-opacity duration-200">
+      <div className="flex items-center gap-1">
         {isEditing ? (
           <>
             <button
