@@ -21,6 +21,11 @@ export default function LoginForm() {
       setError("Please fill in all fields.");
       return;
     }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setError("Please enter a valid email address.");
+      return;
+    }
     setError(null);
     setIsLoading(true);
 
@@ -68,12 +73,11 @@ export default function LoginForm() {
             </label>
             <Input
               id="email"
-              type="email"
+              type="text"
               placeholder="name@example.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="border-zinc-200 bg-white text-zinc-900 placeholder:text-zinc-400 focus:ring-indigo-500"
-              required
             />
           </div>
           <div className="space-y-2">
@@ -87,7 +91,6 @@ export default function LoginForm() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="border-zinc-200 bg-white text-zinc-900 placeholder:text-zinc-400 focus:ring-indigo-500"
-              required
             />
           </div>
         </CardContent>

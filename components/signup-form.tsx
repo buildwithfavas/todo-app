@@ -23,6 +23,11 @@ export default function SignupForm() {
       setError("Please fill in all fields.");
       return;
     }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setError("Please enter a valid email address.");
+      return;
+    }
     if (password.length < 8) {
       setError("Password must be at least 8 characters long.");
       return;
@@ -84,7 +89,6 @@ export default function SignupForm() {
               value={name}
               onChange={(e) => setName(e.target.value)}
               className="border-zinc-200 bg-white text-zinc-900 placeholder:text-zinc-400 focus:ring-indigo-500"
-              required
             />
           </div>
           <div className="space-y-2">
@@ -93,12 +97,11 @@ export default function SignupForm() {
             </label>
             <Input
               id="email"
-              type="email"
+              type="text"
               placeholder="name@example.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="border-zinc-200 bg-white text-zinc-900 placeholder:text-zinc-400 focus:ring-indigo-500"
-              required
             />
           </div>
           <div className="space-y-2">
@@ -112,7 +115,6 @@ export default function SignupForm() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="border-zinc-200 bg-white text-zinc-900 placeholder:text-zinc-400 focus:ring-indigo-500"
-              required
             />
           </div>
           <div className="space-y-2">
@@ -126,7 +128,6 @@ export default function SignupForm() {
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               className="border-zinc-200 bg-white text-zinc-900 placeholder:text-zinc-400 focus:ring-indigo-500"
-              required
             />
           </div>
         </CardContent>
